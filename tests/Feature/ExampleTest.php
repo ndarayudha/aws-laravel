@@ -18,4 +18,15 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+
+    public function test_user()
+    {
+        $response = $this->get('/user');
+
+        $response->assertStatus(200);
+        $response->assertJson([
+            'name' => 'yofan'
+        ]);
+    }
 }
